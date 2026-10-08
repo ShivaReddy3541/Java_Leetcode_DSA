@@ -1,9 +1,12 @@
 name: Sync Leetcode
 
 on:
-  workflow_dispatch:      # Allows you to trigger it manually anytime
+  workflow_dispatch:      # Allows manual trigger
   schedule:
-    - cron: '0 0 * * *'   # Runs automatically every day at midnight
+    - cron: '0 0 * * *'   # Runs every day at midnight
+
+permissions:              # <--- ADDED THIS SECTION
+  contents: write         # Grants permission to commit files to the repo
 
 jobs:
   build:
